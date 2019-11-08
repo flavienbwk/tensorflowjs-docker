@@ -1,0 +1,12 @@
+version: '3'
+services:
+  tensorflowjs:
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tfjs-node:cpu
+    volumes:
+        - "./tfjs-root-volume:/root"
+        - "./tfjs-volume:/root/project"
+    command: /bin/bash
